@@ -131,9 +131,7 @@ video{
   <source src="click.mp3" type="audio/mpeg">
 </audio>
 
-<audio id="bgMusic" loop preload="auto">
-  <source src="navidad.mp3" type="audio/mpeg">
-</audio>
+
 
 <div class="container">
   <div class="card">
@@ -163,14 +161,13 @@ const paragraphs = [
 ];
 
 let step = -1;
-let musicStarted = false;
 
 const textEl = document.getElementById("text");
 const nextBtn = document.getElementById("nextBtn");
 const playBtn = document.getElementById("playBtn");
 const video = document.getElementById("video");
 const sound = document.getElementById("clickSound");
-const bgMusic = document.getElementById("bgMusic");
+
 
 /* EFECTO ESCRIBIR */
 function typeText(el, text, i=0){
@@ -185,12 +182,6 @@ function next(){
 
   sound.currentTime = 0;
   sound.play();
-
-  if(!musicStarted){
-    bgMusic.volume = 0.35;
-    bgMusic.play();
-    musicStarted = true;
-  }
 
   if(step < paragraphs.length){
     textEl.innerHTML = "";
